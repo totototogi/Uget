@@ -1,0 +1,10 @@
+[project]
+name = "url-collector"
+version = "0.1.0"
+description = "Webサイトのリンク構造を収集する学習用クローラー"
+requires-python = ">=3.11"
+dependencies = ["requests", "beautifulsoup4"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,27 @@
+# URL Collector の設定ファイル
+# まずはローカルのサンプルサイトで試します (README の「まずローカルで試す」参照)
+
+[crawler]
+# 巡回を始めるURL (複数指定できます)
+start_urls = ["http://localhost:8000/index.html"]
+
+# 1回の実行で取得する最大ページ数。最初は10程度の小規模で。
+max_pages = 10
+
+# 同じサイトへのアクセス間隔 (秒)。外部サイトでは1秒以上を推奨。
+# robots.txt に Crawl-delay があれば、長いほうが使われます。
+delay_seconds = 1.0
+
+# 1ページの取得を待つ最大時間 (秒)
+timeout_seconds = 10
+
+# サーバーに名乗る名前。外部サイトを巡回するときは連絡先URLを入れると親切です。
+user_agent = "URLCollector/0.1 (learning project)"
+
+# 巡回してよいドメイン。空 [] なら開始URLと同じドメインだけ。
+# 例: allowed_domains = ["example.com", "www.example.com"]
+allowed_domains = []
+
+[database]
+# 収集結果の保存先 (Git管理から除外しています)
+path = "data/crawl.db"
